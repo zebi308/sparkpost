@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f7f6f3;
+    color: #0f0f0f;
+  }
+  .font-serif { font-family: 'Fraunces', serif; }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-2.5 px-2.5 py-2 rounded-md text-sm text-ink-2 hover:bg-surface-2 hover:text-ink transition-colors cursor-pointer;
+  }
+  .sidebar-link.active {
+    @apply bg-surface-2 text-ink font-medium;
+  }
+  .card {
+    @apply bg-white border border-border rounded-[10px] overflow-hidden;
+  }
+  .card-header {
+    @apply px-4 py-3.5 border-b border-border flex items-center justify-between;
+  }
+  .card-body {
+    @apply p-4;
+  }
+  .btn {
+    @apply inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-sm font-medium transition-all cursor-pointer;
+  }
+  .btn-primary {
+    @apply bg-ink text-white hover:bg-ink-2;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-ink-2 border border-border hover:bg-surface-2 hover:text-ink;
+  }
+  .btn-danger {
+    @apply bg-brand-red text-white hover:opacity-90;
+  }
+  .input {
+    @apply w-full px-3 py-2 text-sm border border-border rounded-md bg-surface-2 text-ink placeholder-ink-3 focus:outline-none focus:ring-1 focus:ring-ink/30 focus:border-ink/40;
+  }
+  .label {
+    @apply block text-xs text-ink-3 mb-1.5 tracking-wide;
+  }
+  .badge-green {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-green-light text-brand-green;
+  }
+  .badge-amber {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gold-light text-gold;
+  }
+  .badge-red {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-red-light text-brand-red;
+  }
+  .badge-gray {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-2 text-ink-3;
+  }
+  .metric-card {
+    @apply bg-white border border-border rounded-[10px] p-4;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4d2cb; border-radius: 99px; }
